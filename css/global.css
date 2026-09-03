@@ -1,0 +1,115 @@
+/* Reseta margens e define o box-sizing global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    outline: none;
+}
+
+/* Estilo base do corpo da página (Tema Claro com identidade Adventista) */
+body {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    background-color: #f8fafc;
+    color: #0f172a;
+
+    min-height: 100vh;
+    gap: 20px;
+    
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+/* Formas decorativas de fundo para dar o toque dinâmico da campanha */
+.bg-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+    opacity: 0.25;
+}
+
+.shape-yellow {
+    top: -50px;
+    left: -50px;
+    width: 350px;
+    height: 350px;
+    background-color: #facc15;
+}
+
+.shape-blue {
+    bottom: -50px;
+    right: -50px;
+    width: 400px;
+    height: 400px;
+    background-color: #0284c7;
+}
+
+/* Estilo do Banner / Merchan Institucional com Glassmorfismo */
+header.school-banner {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.1), 0 8px 10px -6px rgba(2, 132, 199, 0.1);
+
+    width: 900px;
+    
+    padding: 1.5rem 1rem;
+    
+    text-align: center;
+    z-index: 1;
+}
+
+header.school-banner .banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 6px;
+}
+
+header.school-banner img.school-logo {
+    width: 110px;
+    height: auto;
+    /* object-fit: contain; */
+    margin-bottom: 2px;
+}
+
+header.school-banner .badge-year {
+    background-color: #facc15;
+    color: #1e3a8a;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+}
+
+header.school-banner h1 {
+    color: #1e3a8a;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+header.school-banner p {
+    color: #475569;
+    font-size: 0.95rem;
+}

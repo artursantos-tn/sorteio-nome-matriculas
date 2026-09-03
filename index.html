@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="shortcut icon" href="img/Logo Colegio Adventista Novo Mundo.svg" type="image/x-icon">
+        
+        <title>Matrículas 2027 - Colégio Adventista Novo Mundo</title>
+
+        <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/selectNames.css">
+        <link rel="stylesheet" href="css/blockView.css">
+
+    </head>
+
+    <body>
+
+        <!-- Elementos decorativos de fundo para dar o efeito moderno -->
+        <div class="bg-shape shape-yellow"></div>
+        <div class="bg-shape shape-blue"></div>
+
+        <!-- Banner Institucional da Campanha 2027 -->
+        <header class="school-banner">
+            <div class="banner-content">
+                <img src="img/Logo Colegio Adventista Novo Mundo.svg" alt="Logo Educação Adventista 2027" class="school-logo">
+                <span class="badge-year">MATRÍCULAS 2027</span>
+                <h1>Colégio Adventista Novo Mundo</h1>
+                <p>O futuro do seu filho começa aqui. Valores que transformam, ensino que transcende!</p>
+            </div>
+        </header>
+        
+        <!-- Seção de Inserção de Nomes -->
+        <section id="selectNames" class="selectNames">
+            <h2 class="section-title">Insira os Nomes para o Sorteio</h2>
+            <textarea id="inputNames" placeholder="Digite um nome por linha (aperte Enter)..."></textarea>
+            <button id="buttonGetNames">Carregar Nomes e Iniciar</button>
+        </section>
+
+        <!-- Seção de Exibição do Sorteio -->
+        <section class="blockView">
+            <h2 class="section-title">Destaque do Sorteio</h2>
+            <input type="text" name="viewName" id="viewName" readonly placeholder="Pronto para sortear...">
+            <button id="drawName">Sortear Nome Agora</button>
+        </section>
+        
+        <script src="js/script.js"></script>
+
+    </body>
+
+</html>
