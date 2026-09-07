@@ -46,6 +46,12 @@ window.drawnNames = [];
 let currentDrawnName = "";
 
 buttonDrawName.addEventListener('click', () => {
+
+    if (drawnNames.length === arrayListNames.length) {
+        alert("Todos já foram sorteados.");
+        return;
+    }
+
     if (!arrayListNames || arrayListNames.length === 0) {
         alert("A lista de nomes está vazia! Carregue os nomes primeiro.");
         return;
@@ -65,21 +71,32 @@ buttonDrawName.addEventListener('click', () => {
 
     let randomIndex;
 
-
     do {
         randomIndex = Math.floor(Math.random() * arrayListNames.length);
         currentDrawnName = arrayListNames[randomIndex];
-    } while (drawnNames.some(item => item.name === currentDrawnName && item.status === "GANHOU"));
+    } while (drawnNames.some(item => item.name === currentDrawnName));
 
     buttonDrawName.disabled = true;
     inputViewName.classList.add("animando");
 
     let tempoTotal = 1000;
-    let intervaloTroca = 100;
+    let intervaloTroca = 90;
     let tempoDecorrido = 0;
 
     const animacao = setInterval(() => {
-        const nomeAleatorio = arrayListNames[Math.floor(Math.random() * arrayListNames.length)];
+        const nomesDisponiveisParaSorteio = arrayListNames.filter(name => 
+            !drawnNames.some(item => item.name === name)
+        );
+
+        if (nomesDisponiveisParaSorteio.length === 0) {
+            clearInterval(animacao);
+            alert("Todos os nomes já foram chamados!");
+            resetSorteioUI();
+            return;
+        }
+
+        const nomeAleatorio = nomesDisponiveisParaSorteio[Math.floor(Math.random() * nomesDisponiveisParaSorteio.length)];
+        
         inputViewName.value = nomeAleatorio;
         tempoDecorrido += intervaloTroca;
 
@@ -96,6 +113,7 @@ buttonDrawName.addEventListener('click', () => {
 });
 
 btnPresente.addEventListener('click', () => {
+    
     let prizeText = inputPrize.value.trim();
 
     let resultObject = {
@@ -108,6 +126,8 @@ btnPresente.addEventListener('click', () => {
     console.log("Registrado:", resultObject);
 
     resetSorteioUI();
+
+    inputPrize.value = ""
 });
 
 btnAusente.addEventListener('click', () => {
