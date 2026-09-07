@@ -107,3 +107,19 @@ section.sectionQuantSorteados div.content i.fa-solid.fa-x:hover {
     color: #006597;
 
 }
+
+@media (max-width: 1024px) {
+
+    section.sectionQuantSorteados div.content {
+        width: 50vw;
+    }
+    
+}
+
+@media (max-width: 950px) {
+
+    section.sectionQuantSorteados div.content {
+        width: 80vw;
+    }
+    
+}

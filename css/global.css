@@ -10,6 +10,8 @@
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     outline: none;
+
+    transition: 0.2s;
 }
 
 body {
@@ -22,7 +24,9 @@ body {
     flex-direction: column;
 
     /* background-color: #f8fafc; */
-    background-image: url('../img/papel\ de\ parede\ matriculas.png');
+    background: url('../img/papel\ de\ parede\ matriculas.png') no-repeat;
+    background-attachment: fixed;
+    background-position: center;
     background-repeat: none;
     background-size: cover;
 
@@ -31,44 +35,19 @@ body {
 
     color: #0f172a;
 
-    min-height: 100vh;
+    height: 100vh;
     
     padding: 2rem;
-    overflow: hidden;
-}
-
-.bg-shape {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    z-index: 0;
-    opacity: 0.25;
-}
-
-.shape-yellow {
-    top: -50px;
-    left: -50px;
-    width: 350px;
-    height: 350px;
-    background-color: #facc15;
-}
-
-.shape-blue {
-    bottom: -50px;
-    right: -50px;
-    width: 400px;
-    height: 400px;
-    background-color: #0284c7;
 }
 
 header.school-banner {
-    position: relative;
+    /* position: relative; */
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    background: rgba(255, 255, 255, 0.7);
+    background: #ffffffe6;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 
@@ -79,9 +58,6 @@ header.school-banner {
     width: 900px;
     
     padding: 1rem 5rem;
-    
-    text-align: center;
-    z-index: 1;
 }
 
 header.school-banner .banner-content {
@@ -160,4 +136,93 @@ header.school-banner  .banner-text .badge-year {
 header.school-banner  .banner-text p {
     color: #003366;
     font-size: 0.95rem;
+}
+
+@media (max-width: 950px) {
+    header.school-banner {
+
+        width: 700px;
+
+        padding: 1rem 2rem;
+
+    }
+
+    header.school-banner .banner-content .nameCEANM p.colegio {
+
+        font-size: 1.3rem;
+
+    }
+
+    header.school-banner .banner-content .nameCEANM p.name {
+
+        font-size: 1.3rem;
+
+    }
+
+}
+
+@media (max-width: 750px) {
+    header.school-banner {
+
+        width: 500px;
+
+        padding: 1rem 2rem;
+
+    }
+
+    header.school-banner .banner-content .nameCEANM{
+
+        display: none;
+
+    }
+
+}
+
+@media (max-width: 550px) {
+    header.school-banner {
+
+        width: 90vw;
+
+        padding: 0.8rem 1rem;
+
+    }
+
+    header.school-banner  .banner-text {
+        align-items: start;
+    }
+
+    header.school-banner  .banner-text .badge-year {
+        font-size: 1.3rem;
+        letter-spacing: 4px;
+    }
+
+}
+
+@media (max-width: 400px) {
+    header.school-banner {
+
+        height: 97px;
+
+    }
+
+    header.school-banner  .banner-text .badge-year {
+        letter-spacing: 1.3px;
+    }
+
+    header.school-banner  .banner-text p {
+        font-size: 0.80rem;
+    }
+
+}
+
+@media (max-width: 320px) {
+
+    header.school-banner  .banner-text .badge-year {
+        letter-spacing: 0;
+    }
+
+    header.school-banner  .banner-text p {
+        display: none;
+    }
+
 }
