@@ -1,0 +1,109 @@
+section.sectionQuantSorteados {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border-radius: 0;
+    box-shadow: none;
+    
+    width: 100vw;
+    height: 100vh;
+
+    transition: 0.3s;
+
+    z-index: 999;
+
+    gap: 1rem;
+
+}
+
+section.sectionQuantSorteados.open {
+    visibility: visible;
+    pointer-events: all;
+}
+
+section.sectionQuantSorteados.closed {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+section.sectionQuantSorteados div.content {
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    flex-direction: column;
+
+    background: white;
+
+    border-radius: 24px;
+
+    box-shadow: 0px 0px 10px 0px #1e3a8a;
+
+    width: 30vw;
+    height: 20vh;
+
+}
+
+section.sectionQuantSorteados div.content p#sorteados {
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #0284c7;
+
+    font-size: 1.3rem;
+    font-weight: bold;
+
+    text-align: center;
+
+    margin: 0 auto 2rem auto;
+
+}
+
+section.sectionQuantSorteados div.content i.fa-solid.fa-x {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #facc15;
+    color: #0284c7;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    width: 35px;
+    height: 35px;
+
+    border-radius: 100%;
+
+    margin: 1rem;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+section.sectionQuantSorteados div.content i.fa-solid.fa-x:hover {
+
+    background: #d6ad07;
+    color: #006597;
+
+}

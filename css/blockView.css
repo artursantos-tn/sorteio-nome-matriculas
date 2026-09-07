@@ -16,7 +16,7 @@
     box-shadow: 0 20px 35px -10px rgba(2, 132, 199, 0.15);
     
     width: 900px;
-    height: 350px;
+    height: 550px;
     
     padding: 2rem 1rem;
     z-index: 5;
@@ -70,4 +70,69 @@
 .blockView button#drawName:hover {
     background-color: #0369a1;
     transform: translateY(-1px);
+}
+
+section.blockView .divPrize {
+    width: 100%;
+    max-width: 700px;
+}
+
+section.blockView .divPrize label {
+    display: block;
+    margin-bottom: 4px;
+    color: #1e3a8a;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+section.blockView .divPrize input {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    border: 2px solid #bae6fd;
+    border-radius: 8px;
+    background: #f0f9ff;
+    font-size: 1rem;
+    margin-bottom: 12px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+section.blockView .divPrize input:focus {
+    border-color: #0284c7;
+    background: #ffffff;
+}
+
+section.blockView .presence-buttons-container {
+    display: none;
+    gap: 12px;
+    width: 100%;
+    max-width: 700px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+section.blockView .btn-presence {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+
+section.blockView .btn-presence:hover {
+    filter: brightness(0.9);
+}
+
+section.blockView .btn-presente {
+    background-color: #16a34a;
+    color: #ffffff;
+}
+
+section.blockView .btn-ausente {
+    background-color: #dc2626;
+    color: #ffffff;
 }

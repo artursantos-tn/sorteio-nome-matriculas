@@ -12,42 +12,66 @@
         <title>Matrículas 2027 - Colégio Adventista Novo Mundo</title>
 
         <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/sectionQuantSorteados.css">
         <link rel="stylesheet" href="css/selectNames.css">
         <link rel="stylesheet" href="css/blockView.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     </head>
 
     <body>
 
-        <!-- Elementos decorativos de fundo para dar o efeito moderno -->
         <div class="bg-shape shape-yellow"></div>
         <div class="bg-shape shape-blue"></div>
 
-        <!-- Banner Institucional da Campanha 2027 -->
         <header class="school-banner">
             <div class="banner-content">
                 <img src="img/Logo Colegio Adventista Novo Mundo.svg" alt="Logo Educação Adventista 2027" class="school-logo">
+                <div class="nameCEANM">
+                    <p class="colegio">Colégio Adventista</p>
+                    <p class="name">Novo Mundo</p>
+                </div>
+            </div>
+            <div class="banner-text">
                 <span class="badge-year">MATRÍCULAS 2027</span>
-                <h1>Colégio Adventista Novo Mundo</h1>
-                <p>O futuro do seu filho começa aqui. Valores que transformam, ensino que transcende!</p>
+                <p>Educando Gerações com Valores pra Vida!</p>
             </div>
         </header>
         
-        <!-- Seção de Inserção de Nomes -->
         <section id="selectNames" class="selectNames">
             <h2 class="section-title">Insira os Nomes para o Sorteio</h2>
             <textarea id="inputNames" placeholder="Digite um nome por linha (aperte Enter)..."></textarea>
             <button id="buttonGetNames">Carregar Nomes e Iniciar</button>
         </section>
 
-        <!-- Seção de Exibição do Sorteio -->
+        <section class="sectionQuantSorteados closed" id="sectionQuantSorteados">
+            <div class="content">
+                <i class="fa-solid fa-x" id="fa-x"></i>
+                <p id="sorteados"></p>
+            </div>
+        </section>
+
         <section class="blockView">
-            <h2 class="section-title">Destaque do Sorteio</h2>
+            <h2 class="section-title">Controle de Sorteio e Prêmios</h2>
+    
+            <div class="divPrize">
+                <label for="inputPrize">Prêmio Atual:</label>
+                <input type="text" id="inputPrize" placeholder="Ex: Bicicleta, Churrasqueira...">
+            </div>
+
             <input type="text" name="viewName" id="viewName" readonly placeholder="Pronto para sortear...">
-            <button id="drawName">Sortear Nome Agora</button>
+            
+            <button id="drawName">Sortear Nome</button>
+
+            <div id="presenceButtons" class="presence-buttons-container">
+                <button id="btnPresente" class="btn-presence btn-presente">Presente (GANHOU)</button>
+                <button id="btnAusente" class="btn-presence btn-ausente">Ausente (PERDEU)</button>
+            </div>
         </section>
         
         <script src="js/script.js"></script>
+        <script src="js/gerarPDF.js"></script>
 
     </body>
 
