@@ -42,8 +42,14 @@
     
     width: 100%;
     max-width: 700px;
+    height: 200px;
 
     padding: 16px;
+
+    white-space: normal; 
+    word-break: break-word;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
 }
 
 .blockView button#drawName {
@@ -64,7 +70,7 @@
     cursor: pointer;
 
     transition: 0.2s;
-    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+    box-shadow: 0 4px 12px #0284c74d;
 }
 
 .blockView button#drawName:hover {
@@ -73,32 +79,52 @@
 }
 
 section.blockView .divPrize {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
     width: 100%;
+
     max-width: 700px;
 }
 
-section.blockView .divPrize label {
-    display: block;
+section.blockView .divPrize #checkboxPrize {
+
+    width: 25px;
+    height: 25px;
+
+}
+
+section.blockView .divPrize .divInput {
+
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+
+    flex-direction: column;
+}
+
+section.blockView .divPrize .divInput label {
     margin-bottom: 4px;
     color: #1e3a8a;
     font-size: 0.9rem;
     font-weight: bold;
 }
 
-section.blockView .divPrize input {
-    width: 100%;
-    max-width: 100%;
+section.blockView .divPrize .divInput input {
+    width: 500px;
     padding: 10px;
     border: 2px solid #bae6fd;
     border-radius: 8px;
     background: #f0f9ff;
     font-size: 1rem;
-    margin-bottom: 12px;
+    margin-top: 1rem;
     outline: none;
     box-sizing: border-box;
 }
 
-section.blockView .divPrize input:focus {
+section.blockView .divPrize .divInput input:focus {
     border-color: #0284c7;
     background: #ffffff;
 }
@@ -139,6 +165,10 @@ section.blockView .btn-ausente {
 
 @media (max-width: 950px) {
 
+    .blockView input[type="text"]#viewName {
+        font-size: 2rem;
+    }
+
     .blockView {
         width: 700px;
         padding: 2rem 1rem;
@@ -156,6 +186,10 @@ section.blockView .btn-ausente {
 }
 
 @media (max-width: 550px) {
+
+    section.blockView .divPrize .divInput input {
+        width: 70vw;
+    }
 
     .blockView {
         width: 90vw;

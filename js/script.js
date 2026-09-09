@@ -42,8 +42,21 @@ let presenceButtons = document.getElementById("presenceButtons");
 let btnPresente = document.getElementById("btnPresente");
 let btnAusente = document.getElementById("btnAusente");
 
+let checkboxPrize = document.getElementById("checkboxPrize")
+let divInput = document.getElementById("divInput")
+
 window.drawnNames = [];
 let currentDrawnName = "";
+
+checkboxPrize.addEventListener('change', ()=> {
+
+    if (checkboxPrize.checked) {
+        divInput.style.display = "none"
+    } else if (!checkboxPrize.checked) {
+        divInput.style.display = "flex"
+    }
+
+})
 
 buttonDrawName.addEventListener('click', () => {
 
@@ -63,7 +76,8 @@ buttonDrawName.addEventListener('click', () => {
     }
 
     let prizeText = inputPrize.value.trim();
-    if (prizeText === "") {
+
+    if (prizeText === "" && !checkboxPrize.checked) {
         alert("Por favor, digite o nome do prêmio atual antes de sortear!");
         inputPrize.focus();
         return;
