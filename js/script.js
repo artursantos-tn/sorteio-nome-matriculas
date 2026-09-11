@@ -45,15 +45,18 @@ let btnAusente = document.getElementById("btnAusente");
 let checkboxPrize = document.getElementById("checkboxPrize")
 let divInput = document.getElementById("divInput")
 
+let section_title = document.getElementById("section-title")
+let countDrawn = 1;
+
 window.drawnNames = [];
 let currentDrawnName = "";
 
 checkboxPrize.addEventListener('change', ()=> {
 
     if (checkboxPrize.checked) {
-        divInput.style.display = "none"
+        divInput.style.visibility = "hidden"
     } else if (!checkboxPrize.checked) {
-        divInput.style.display = "flex"
+        divInput.style.visibility = "visible"
     }
 
 })
@@ -124,6 +127,11 @@ buttonDrawName.addEventListener('click', () => {
             buttonDrawName.style.display = "none";
         }
     }, intervaloTroca);
+
+    if (countDrawn == 1) {
+        section_title.innerText = `Sorteio Nº ${countDrawn++}`
+    }
+
 });
 
 btnPresente.addEventListener('click', () => {
@@ -142,6 +150,8 @@ btnPresente.addEventListener('click', () => {
     resetSorteioUI();
 
     inputPrize.value = ""
+
+    section_title.innerText = `Sorteio Nº ${countDrawn++}`
 });
 
 btnAusente.addEventListener('click', () => {
